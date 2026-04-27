@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#02063f 5%, #2418ce); /*il primo colore che si cit*/
+    background-attachment: fixed;   /*mantiene fissa la sfumatura di colore quando si scrolla la pagina*/
+    height: 100vh; /*imposta l'altezza del body a tutto il viewport (vh viewportheight unità di misura 100vh = 100% viewport)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+
+}
+
+.piano-panel {
+    height: 94px;
+    background-color: rgb(223, 11, 134);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    /*posiziona gli elementi verticalmente*/
+    padding: 20px;          /*gestisce le distanze tra elementi appartenenti a uno stesso div*/
+    background-image: url('images/panel-reflex.png'); /*l'immagine del glare la inserisco nel file css come parte del background del div pianopanel così che segue tutte le eventuali modifiche applicate all'intero div, più responsive*/
+    background-repeat: no-repeat; /* di default le immagini di background si ripetono*/
+    background-size: contain; /* indica che la dimensione deve sempre essere uguale a quella del div, quindi se io ingrandisco l'intero piani-panel si ingrandisce anche l'immagine del glare*/
+}
+
+.piano-panel img {
+    height: 67px;
+
+}
+
+.piano-keyboard {
+    height: 190px;
+
+    display: flex; /*le impostazioni di default di flex mi affianca i tasti per cui basta inserire questo attributo*/
+   
+
+
+}
+
+.key {
+
+}
+
+.key-white {
+    height: 100%;
+    width: 64px;
+    background-color:white;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 6px solid #7b7b7b;
+    border-radius: 0 0 8px 8px;     /*questo attributo smussa gli angoli dei bordi di un raggio definito da noi, ogni cifra è il raggio si arrotondamento di uno dei bordi partendo da quello in alto a sinistra*/
+}
+
+.key-black {
+    height: 65%;
+    width: 44px;
+    background: linear-gradient(#605e5e, black);
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 6px solid #7b7b7b;
+    border-radius: 0 0 8px 8px;     /*questo attributo smussa gli angoli dei bordi di un raggio definito da noi, ogni cifra è il raggio si arrotondamento di uno dei bordi partendo da quello in alto a sinistra*/
+    margin-left: -22px;
+    margin-right: -22px; /*margin è l'attributo che allontana gli oggetti all'interno di una stessa classe, margin accetta anche valori negativi che quindi avvicinano gli elementi. per avvicinarli in maniera simmetrica inserisco un margine negativo pari alla meta della larghezza dell'item*/
+    z-index: 2; /* attributo che da la precedenza all'interno di uno stesso div agli item a cui è assegnato un valore positivo*/
+}
+
+.key-white:active {
+    background-color: #dddddd;
+}
+
+.key-black:active {
+    background: black;
+}
+
+
